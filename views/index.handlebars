@@ -1,31 +1,38 @@
-<div class="jumbotron jumbotron-fluid text-center">
-  <h1 class="display-1">🍔 Eat Da Burger App</h1>
+<div class="container">
+<div class="jumbotron  text-light text-center p-5">
+  <h1> Eat the Burgers App!</h1>
 </div>
 
-<div class="container">
-  <div class="row">
-    {{!-- Left column for Burger Form --}}
-    <div class="col-12 col-md-3">
+<div class="col-12 ">
       <form id="burger-form">
-        <input type="text" class="form-control mb-3" id="burger-input" placeholder="Burger Name">
-        <button class="btn btn-block btn-success" type="submit">Add A Burger!</button>
+        <div class="alert alert-info" role="alert">
+          <h2>You can Place your Burger here</h2>
+        </div>
+        
+        <input class="form-control" id="burger-input" placeholder="Burger's Name" />
+        <button class="btn btn-success btn-block" type="submit"> <i class="fas fa-cheeseburger"></i>
+          Place A Burger!
+        </button>
       </form>
     </div>
 
     {{!-- Right columm for printing burgers --}}
-    <div class="col-12 col-md-9">
+   
       <div class="row">
 
         {{!-- Inner left column for burgers waiting to be devoured --}}
-        <div class="col-12 col-md-6">
-          <h2 class="mb-3">Waiting To Be Devoured</h2>
-          <ul class="list-group">
+        <div class="col-12 col-md-6 ">
+           <ul class="list-group my-5">
+          <li class="list-group-item list-group-item-info text-center ">
+              <h2>Waiting To Be Devoured</h2>
+         </li>
+         
             {{#each burgerData}}
               {{#unless devoured}}
               <li class="list-group-item d-flex">
                 {{burger_name}}
                 <span class="ml-auto">
-                  <button class="btn btn-sm btn-warning devour-burger" data-id="{{id}}" data-devoured="true">😋 Devour It!</button>
+                  <button class="btn btn-sm btn-warning devour-burger" data-id="{{id}}" data-devoured="true"> Devour It!</button>
                 </span>
               </li>
               {{/unless}}
@@ -35,8 +42,12 @@
 
         {{!-- Inner right column for burgers that have been devoured --}}
         <div class="col-12 col-md-6">
-          <h2 class="mb-3">Already Devoured</h2>
-          <ul class="list-group">
+           <ul class="list-group my-5">
+          <li class="list-group-item list-group-item-info text-center">
+              <h2>Already Devoured</h2>
+         </li>
+          
+         
             {{#each burgerData}}
               {{#if devoured}}
               <li class="list-group-item d-flex">
@@ -52,5 +63,5 @@
     </div>
   </div>
 </div>
-
-<script type="text/javascript" src="../public/assets/js/burgers.js"></script>
+</div>
+<script type="text/javascript" src="./assets/js/burgers.js"></script>
