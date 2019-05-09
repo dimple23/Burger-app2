@@ -1,0 +1,56 @@
+<div class="jumbotron jumbotron-fluid text-center">
+  <h1 class="display-1">🍔 Eat Da Burger App</h1>
+</div>
+
+<div class="container">
+  <div class="row">
+    {{!-- Left column for Burger Form --}}
+    <div class="col-12 col-md-3">
+      <form id="burger-form">
+        <input type="text" class="form-control mb-3" id="burger-input" placeholder="Burger Name">
+        <button class="btn btn-block btn-success" type="submit">Add A Burger!</button>
+      </form>
+    </div>
+
+    {{!-- Right columm for printing burgers --}}
+    <div class="col-12 col-md-9">
+      <div class="row">
+
+        {{!-- Inner left column for burgers waiting to be devoured --}}
+        <div class="col-12 col-md-6">
+          <h2 class="mb-3">Waiting To Be Devoured</h2>
+          <ul class="list-group">
+            {{#each burgerData}}
+              {{#unless devoured}}
+              <li class="list-group-item d-flex">
+                {{burger_name}}
+                <span class="ml-auto">
+                  <button class="btn btn-sm btn-warning devour-burger" data-id="{{id}}" data-devoured="true">😋 Devour It!</button>
+                </span>
+              </li>
+              {{/unless}}
+            {{/each}}
+          </ul>
+        </div>
+
+        {{!-- Inner right column for burgers that have been devoured --}}
+        <div class="col-12 col-md-6">
+          <h2 class="mb-3">Already Devoured</h2>
+          <ul class="list-group">
+            {{#each burgerData}}
+              {{#if devoured}}
+              <li class="list-group-item d-flex">
+                {{burger_name}}
+              </li>
+              {{/if}}
+            {{/each}}
+          </ul>
+        </div>
+
+      {{!-- Do not delete! --}}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" src="../public/assets/js/burgers.js"></script>
