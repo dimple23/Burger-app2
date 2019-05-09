@@ -22,10 +22,7 @@ The user may enter any burger name to add it to the menu. This also adds the new
 
   6)Sequelize 
 
-  ### screen shots
-
-  http://localhost:3000/?
-
+  
   ### installation
 
   1) npm install
@@ -36,5 +33,5 @@ The user may enter any burger name to add it to the menu. This also adds the new
 
   4)npx sequelize init:config && sequelize init:models
 
-  
+
   
