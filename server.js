@@ -32,8 +32,12 @@ app.get('*', function(req, res) {
 });
 
 // Sync sequelize models, then start express app
+
+
 db.sequelize.sync({ force: false }).then(function() {
   app.listen(PORT, () => console.log(`🌍 => listening to http://localhost:${PORT}`));
+
+
 });
 
 

@@ -19,6 +19,7 @@ $(document).ready(function() {
 
   // bind event listener for when devour-burger btn clicked
   $(".devour-burger").on("click", function() {
+    
     const burgerId = $(this).attr("data-id");
     const devoured = $(this).attr("data-devoured");
 
