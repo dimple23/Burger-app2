@@ -19,7 +19,8 @@ app.use(express.static("public"));
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
-// turn on routes
+
+
 require('./routes/htmlRoutes')(app);
 require('./routes/apiRoutes')(app);
 
@@ -33,11 +34,8 @@ app.get('*', function(req, res) {
 
 // Sync sequelize models, then start express app
 
-
 db.sequelize.sync({ force: false }).then(function() {
   app.listen(PORT, () => console.log(`🌍 => listening to http://localhost:${PORT}`));
-
-
 });
 
 
