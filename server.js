@@ -5,6 +5,9 @@ const exphbs = require('express-handlebars');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// require models for syncing
+const db = require("./models");
+
 // set up necessarily middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -28,5 +31,11 @@ app.get('*', function(req, res) {
   });
 });
 
-// turn on server
-app.listen(PORT, () => console.log(`listening to http://localhost:${PORT}`));
+// Sync sequelize models, then start express app
+db.sequelize.sync({ force: false }).then(function() {
+  app.listen(PORT, () => console.log(`🌍 => listening to http://localhost:${PORT}`));
+});
+
+
+
+

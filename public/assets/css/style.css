@@ -1,22 +1,20 @@
 body{
-  background-image: url(../image/b1.jpg);
+  background-image: url(../image/b4.jpg);
 
 }
 .jumbotron{
-  background-image: url(../image/b2.gif);
-  background-repeat: no-repeat;
-  background-position: left;
+  
   background-size:contain;
   background-color: black;
   height: 100%;
+  background-image: url(../image/b3.gif);
+  background-repeat: no-repeat;
+  background-position: right;
   
 }
 
 
 h2{
   color:brown;
-}
-.add{
-  
 }
 
